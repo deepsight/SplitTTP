@@ -1,16 +1,18 @@
 # SplitTTP – Turning an HTTP Proxy’s Reputation Look-Up into an exfil sidechannel
 
-*Proof-of-Concept for Security Researchers*
+SplitTTP is A Proof of Concept HTTP Proxy that can be used to evade Bluecoat's Authentication control by using their reputation service (WebPulse) check as a side-channel. 
 
-**Goal:** To demonstrate how a commercial proxy’s URL-reputation engine, invoked _before_ authentication, can be hijacked for exfiltration. We also implement DNS for fetching the result if bidirectional communication is needed.
+As of the publishing of this project, the default configuration of Bluecoat HTTP proxy enables their reputation check service (WebPulse) by default.
+All of the URLs which haven't been checked by the WebPulse service are fetched and analyzed to produce a reputation score.
+
+Bluecoat’s URL-reputation engine is invoked _before_ or in parallel to authentication, this can be misused for exfiltration. We hope to demonstrate the risk of “reputation-check-first, auth-later” design flaws in commercial products.
+
+In this project we have also implemented DNS for fetching the result if inbound communication is needed.
+
+Please check out the [GreenVest](https://github.com/deepsight/GreenVest/) sister project, which replicates BlueCoat's reputation check behavior. 
 
 ---
 
-## Why Build Yet-Another Exfil PoC?
-
-We demonstrate the evasion of the authentication control on the Proxy to exfiltrate data through a reputation check sidechannel.
-SplitTTP also pulls the **server’s response** back in via DNS, proving a full round trip.
-That exposes the risk of “reputation-first, auth-later” designs present in several enterprise products.
 
 > **DNS is simply a convenient return path.**
 > An all-DNS approach is feasible, but HTTP exfil is faster and we want to demonstrate the reputation side-channel.
