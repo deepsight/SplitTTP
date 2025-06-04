@@ -198,3 +198,7 @@ curl -x http://localhost:8999 -d "testdata" http://example.org/receivedata.php
 * **Ethical Use Only:** This tool is intended for security research, education, and authorized penetration testing. Use only where you have explicit, written permission. Misuse of this tool is illegal and unethical.
 
 
+---
+## Author
+
+Jose Garduno https://www.linkedin.com/in/josegarduno/
