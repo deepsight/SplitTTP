@@ -1,3 +1,4 @@
+![SplitTTP logo](splitttp.png)
 # SplitTTP – Turning an HTTP Proxy’s Reputation Look-Up into an exfil sidechannel
 
 SplitTTP is A Proof of Concept HTTP Proxy that can be used to evade Bluecoat's Authentication control by using their reputation service (WebPulse) check as a side-channel. 
